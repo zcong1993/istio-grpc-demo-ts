@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apk add --no-cache ca-certificates
 
-COPY package.json yarn.* ./
+COPY package.json ./
 
 RUN yarn
 
