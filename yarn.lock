@@ -396,10 +396,10 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.10.tgz#17a8ec65cd8e88f51b418ceb271af18d3137df67"
   integrity sha512-WsVzTPshvCSbHThUduGGxbmnwcpkgSctHGHTqzWyFg4lYAuV5qXlyFPOsP3OWqCINfmg/8VXP+zJaa4OxEsBQQ==
 
-"@zcong/istio-helpers@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@zcong/istio-helpers/-/istio-helpers-0.3.0.tgz#fb33bccce9aff2e8c839d0d367d614fb4651855d"
-  integrity sha512-dTo9Tz4ALIFGhMQWoAXQ4twj3MvEEJdGmIIf3//EVh3j/nekhi2nPol4DAwCULc+VdG0eX2bNxn+8IgaHwa+IQ==
+"@zcong/istio-helpers@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@zcong/istio-helpers/-/istio-helpers-0.4.0.tgz#23cc04bb65c5fa9cb3ffa633fb29eede1d4fe5b0"
+  integrity sha512-nJZ1PdVOE5gS7VZ38f5ThUc4/8BhCYE+g5e4nj7onAXp/wxap0NwDGUwbOWeEZibLhoca7me4TNidtlczbZ1JQ==
   dependencies:
     grpc "^1.19.0"
 
