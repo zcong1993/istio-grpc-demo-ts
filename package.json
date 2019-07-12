@@ -17,20 +17,20 @@
   "author": "zcong1993",
   "license": "MIT",
   "devDependencies": {
-    "@types/google-protobuf": "^3.2.7",
-    "@types/jest": "^24.0.5",
-    "@types/node": "^11.9.4",
-    "grpc-tools": "^1.7.1",
-    "grpc_tools_node_protoc_ts": "^2.5.0",
+    "@types/google-protobuf": "^3.7.1",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
+    "grpc-tools": "^1.8.0",
+    "grpc_tools_node_protoc_ts": "^2.5.4",
     "husky": "^3.0.0",
-    "jest": "^24.1.0",
-    "lint-staged": "^9.0.0",
-    "prettier": "^1.16.4",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.12.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.1"
+    "typescript": "^3.5.3"
   },
   "jest": {
     "testEnvironment": "node",
@@ -59,9 +59,9 @@
     }
   },
   "dependencies": {
-    "@zcong/istio-helpers": "^0.3.0",
+    "@zcong/istio-helpers": "^0.4.1",
     "axios": "^0.19.0",
-    "google-protobuf": "^3.7.0",
-    "grpc": "^1.19.0"
+    "google-protobuf": "^3.9.0",
+    "grpc": "^1.22.2"
   }
 }

@@ -19,7 +19,9 @@ class UuidService implements IUuidServiceServer {
     callback: grpc.sendUnaryData<Response>
   ) {
     console.log(call.request.toObject())
+    console.log('incoming tracing: ', call.metadata)
     const headers = grpc2http(call.metadata)
+    console.log('outgoing tracing: ', headers)
     axios
       .get(this.upstream, {
         headers

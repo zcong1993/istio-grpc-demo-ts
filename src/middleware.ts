@@ -23,7 +23,9 @@ class UuidService implements IUuidServiceServer {
     callback: grpc.sendUnaryData<Response>
   ) {
     console.log(call.request.toObject())
-    const metadata = grpc2grpc(call.metadata, false)
+    console.log('incoming tracing: ', call.metadata)
+    const metadata = grpc2grpc(call.metadata)
+    console.log('outgoing tracing: ', metadata)
     this.client.uuid(call.request, metadata, (err, resp) => {
       if (err) {
         console.log('grpc middleware node call grpc error: ', err)
