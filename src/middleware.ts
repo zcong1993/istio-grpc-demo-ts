@@ -7,6 +7,7 @@ import {
   IUuidServiceClient,
   UuidServiceClient
 } from './generated/pb_grpc_pb'
+import { tracingKeys } from './common'
 
 class UuidService implements IUuidServiceServer {
   private client: IUuidServiceClient
@@ -24,7 +25,7 @@ class UuidService implements IUuidServiceServer {
   ) {
     console.log(call.request.toObject())
     console.log('incoming tracing: ', call.metadata)
-    const metadata = grpc2grpc(call.metadata)
+    const metadata = grpc2grpc(call.metadata, tracingKeys)
     console.log('outgoing tracing: ', metadata)
     this.client.uuid(call.request, metadata, (err, resp) => {
       if (err) {

@@ -1,6 +1,6 @@
 import * as grpc from 'grpc'
 import { UuidServiceClient } from './generated/pb_grpc_pb'
-import { Request, Response } from './generated/pb_pb'
+import { Request } from './generated/pb_pb'
 
 const client = new UuidServiceClient(
   '0.0.0.0:1234',

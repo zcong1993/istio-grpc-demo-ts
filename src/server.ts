@@ -3,6 +3,7 @@ import axios from 'axios'
 import { grpc2http } from '@zcong/istio-helpers'
 import { Request, Response } from './generated/pb_pb'
 import { IUuidServiceServer, UuidServiceService } from './generated/pb_grpc_pb'
+import { tracingKeys } from './common'
 
 class UuidService implements IUuidServiceServer {
   private upstream: string
@@ -20,7 +21,7 @@ class UuidService implements IUuidServiceServer {
   ) {
     console.log(call.request.toObject())
     console.log('incoming tracing: ', call.metadata)
-    const headers = grpc2http(call.metadata)
+    const headers = grpc2http(call.metadata, tracingKeys)
     console.log('outgoing tracing: ', headers)
     axios
       .get(this.upstream, {
