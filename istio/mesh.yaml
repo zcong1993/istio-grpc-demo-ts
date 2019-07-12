@@ -1,0 +1,80 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: node-grpc-server
+spec:
+  hosts:
+    - node-grpc-server
+  http:
+    - route:
+        - destination:
+            host: node-grpc-server
+            subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: node-grpc-server
+spec:
+  host: node-grpc-server
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grpc-middleware-node
+spec:
+  hosts:
+    - grpc-middleware-node
+  http:
+    - route:
+        - destination:
+            host: grpc-middleware-node
+            subset: v1
+          weight: 50
+        - destination:
+            host: grpc-middleware-node
+            subset: v2
+          weight: 50
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: grpc-middleware-node
+spec:
+  host: grpc-middleware-node
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grpc-web-node
+spec:
+  hosts:
+    - grpc-web-node
+  http:
+    - route:
+        - destination:
+            host: grpc-web-node
+            subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: grpc-web-node
+spec:
+  host: grpc-web-node
+  subsets:
+    - name: v1
+      labels:
+        version: v1
