@@ -6,16 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Docker Login
-      uses: actions/docker/login@aea64bb1b97c42fa69b90523667fef56b90d7cff
-      env:
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-    - name: Docker Build
-      uses: actions/docker/cli@aea64bb1b97c42fa69b90523667fef56b90d7cff
+    - name: Docker build and push
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        args: build -t zcong/istio-grpc-demo-ts .
-    - name: Docker Push
-      uses: actions/docker/cli@aea64bb1b97c42fa69b90523667fef56b90d7cff
-      with:
-        args: push zcong/istio-grpc-demo-ts
+        name: zcong/istio-grpc-demo-ts
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
