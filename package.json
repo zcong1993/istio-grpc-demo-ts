@@ -22,7 +22,7 @@
     "@types/koa": "^2.0.49",
     "@types/node": "^12.6.2",
     "grpc-tools": "^1.8.0",
-    "grpc_tools_node_protoc_ts": "^2.5.4",
+    "grpc_tools_node_protoc_ts": "^3.0.0",
     "husky": "^4.0.0",
     "jest": "^25.0.0",
     "lint-staged": "^10.0.0",
